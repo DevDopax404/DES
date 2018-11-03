@@ -1,7 +1,7 @@
 # DES
 
 This is an implementation in C of DES (Data Encryption Standard), a broken cipher.
-I implemented it with a padding system made of '{'.
+I implemented it with a padding system made of 0.
 
 
 ## Mode of operation
