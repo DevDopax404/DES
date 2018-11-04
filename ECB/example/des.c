@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "DES.h"
+#include "../DES.h"
 
 int main(int argc, char **argv)
 {
