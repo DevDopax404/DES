@@ -9,7 +9,7 @@ char *adj_str(const char *txt, int *len)
 	char *adj;
 	int pad, i;
 	pad = strlen(txt);
-	*len = (strlen(txt) / 8 + ((strlen(txt) % 8) ? (1) : (0))) * 8;
+	*len = (pad / 8 + (pad % 8) ? (1) : (0))) * 8;
 	adj = (char*) calloc(*len, sizeof(char));
 	strncpy(adj, txt, strlen(txt));
 	for (i = pad; i < *len; i++) adj[i] = 0;
