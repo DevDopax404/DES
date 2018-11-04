@@ -29,7 +29,7 @@ block des_ecb_on_block(block b64, block *keys, option opt)
 	split_block(b64, &l, &r);						// B (64 bits) = L (32 bits) + R (32 bits)
 	// If we encrypt, the rounds will go from 1 to 16, otherwise from 16 to 1, so:
 	step = opt ? 1 : -1;
-	for (round = opt ? 0 : 15; (opt) ? (round < 16) : (round >= 0); round += step)
+	for (round = opt ? 0 : 15; opt ? round < 16 : round >= 0; round += step)
 	{
 		com = r;
 		r = mangler(r, keys[round]) ^ l;			// R = Mangler(R(i), K(i + 1)) XOR L(i)
