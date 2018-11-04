@@ -7,9 +7,8 @@
 char *adj_str(const char *txt, int *len)
 {
 	char *adj;
-	int pad;
-	pad = strlen(txt);
-	*len = (pad / 8 + ((pad % 8) ? (1) : (0))) * 8;
+	*len = strlen(txt);
+	*len = (*len / 8 + (*len % 8 ? 1 : 0)) * 8;
 	adj = (char*) calloc(*len, sizeof(char));
 	strncpy(adj, txt, strlen(txt));
 	return adj;
