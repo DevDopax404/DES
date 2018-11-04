@@ -12,7 +12,6 @@ char *adj_str(const char *txt, int *len)
 	*len = (pad / 8 + ((pad % 8) ? (1) : (0))) * 8;
 	adj = (char*) calloc(*len, sizeof(char));
 	strncpy(adj, txt, strlen(txt));
-	memset(adj + pad, 0, *len - pad);
 	return adj;
 }
 
