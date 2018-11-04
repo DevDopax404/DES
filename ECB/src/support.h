@@ -7,12 +7,12 @@
 char *adj_str(const char *txt, int *len)
 {
 	char *adj;
-	int pad, i;
+	int pad;
 	pad = strlen(txt);
-	*len = (pad / 8 + (pad % 8) ? (1) : (0))) * 8;
+	*len = (pad / 8 + ((pad % 8) ? (1) : (0))) * 8;
 	adj = (char*) calloc(*len, sizeof(char));
 	strncpy(adj, txt, strlen(txt));
-	for (i = pad; i < *len; i++) adj[i] = 0;
+	memset(adj + pad, 0, *len - pad);
 	return adj;
 }
 
